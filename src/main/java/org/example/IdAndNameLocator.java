@@ -18,9 +18,11 @@ public class IdAndNameLocator {
         driver.findElement(By.id("inputUsername")).sendKeys("rahul");
         driver.findElement(By.name("inputPassword")).sendKeys("incorrectPassword");
         driver.findElement(By.className("signInBtn")).click();
+        System.out.println(driver.findElement(By.cssSelector("p.error")).getText());
 
+        driver.findElement(By.linkText("Forgot your password?")).click();
 
-        System.out.println(driver.findElement(By.cssSelector("p.error")).getText());;
+        driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("rahul");
 
     }
 }
